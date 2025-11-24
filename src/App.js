@@ -47,5 +47,5 @@ function App() {
     </div>
   );
 }
-
+console.log("teste");
 export default App;
