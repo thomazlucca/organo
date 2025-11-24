@@ -26,7 +26,7 @@ const Footer = () => {
         <img src="/images/logo.png" alt="" />
       </section>
       <section>
-        <p>Desenvolvido por Alura.</p>
+        <p>Desenvolvido por Thomaz Moreira.</p>
       </section>
     </footer>
   );

@@ -1,33 +1,42 @@
 import Employer from "../Employer";
 import "./Team.css";
 
-const Team = (props) => {
+const Team = ({
+  mudarCor,
+  time,
+  nome,
+  corPrimaria,
+  corSecundaria,
+  colaboradores,
+  aoDeletar,
+}) => {
   return (
-    props.colaboradores.length > 0 && (
+    colaboradores.length > 0 && (
       <section
         className="team"
         style={{
           backgroundImage: "url(/images/fundo.png)",
-          backgroundColor: props.corSecundaria,
+          backgroundColor: corSecundaria,
         }}
       >
         <input
-          value={props.corPrimaria}
-          onChange={(evento) => props.mudarCor(evento.target.value, props.nome)}
+          value={corPrimaria}
+          onChange={(evento) => mudarCor(evento.target.value, time.id)}
           type="color"
           className="input-cor"
         />
-        <h3 style={{ borderColor: props.corPrimaria }}>{props.nome}</h3>
+        <h3 style={{ borderColor: corPrimaria }}>{nome}</h3>
         <div className="employers">
-          {props.colaboradores.map((colaborador) => {
+          {colaboradores.map((colaborador) => {
             return (
               <Employer
+                id={colaborador.id}
                 key={colaborador.nome}
                 nome={colaborador.nome}
                 cargo={colaborador.cargo}
                 imagem={colaborador.imagem}
-                corDeFundo={props.corPrimaria}
-                aoDeletar={props.aoDeletar}
+                corDeFundo={corPrimaria}
+                aoDeletar={() => aoDeletar(colaborador.id)}
               ></Employer>
             );
           })}
