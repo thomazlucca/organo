@@ -9,6 +9,7 @@ const Team = ({
   corSecundaria,
   colaboradores,
   aoDeletar,
+  aoFavoritar,
 }) => {
   return (
     colaboradores.length > 0 && (
@@ -37,6 +38,8 @@ const Team = ({
                 imagem={colaborador.imagem}
                 corDeFundo={corPrimaria}
                 aoDeletar={() => aoDeletar(colaborador.id)}
+                aoFavoritar={aoFavoritar}
+                favorito={colaborador.favorito}
               ></Employer>
             );
           })}
